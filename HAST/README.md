@@ -1,4 +1,4 @@
-#Illumos port of FreeBSD's HAST (High Available STorage)...#
+# Illumos port of FreeBSD's HAST (High Available STorage)... #
 
 This is regarding the port of FreeBSD's HAST (High Available Storage) to Illumos and assoicated distributions, with the scope to extend functionality regarding:
 
@@ -10,8 +10,8 @@ However, RAID-1 over TCP/IP (how HAST has been originally conceived) could provi
 
 The original source code of concern can be found here...
 
-    https://github.com/freebsd/freebsd/tree/master/sbin/hastd
-    https://github.com/freebsd/freebsd/tree/master/sbin/hastctl
+- https://github.com/freebsd/freebsd/tree/master/sbin/hastd
+- https://github.com/freebsd/freebsd/tree/master/sbin/hastctl
 
 
 Further development should be done with the inclusion of iSCSI shared block-devices, and also support for more nodes than just the current limit of two, therefore adding the capability of a potential stretched cluster configuration.
