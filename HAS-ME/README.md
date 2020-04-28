@@ -21,9 +21,8 @@ Another point to refer to from the illumos.org developer forum is:
 
 A FreeBSD HAST (High Available Storage) port to Illumos could do this, but it lacks functionality regarding multi-homed storage and is only supported for 2-nodes without I/O fencing mechanisms via reservations and cluster membership vote counts via a Quorum device/server, therefore leading to a potential split-brain scenario! It would be good if a port was made, along with support for multi-homed stretched clusters up to at least 4-nodes (2-local and 2-remote). However, RAID-1 over TCP/IP (how HAST has been originally conceived) could provide the basis for a stretched cluster for HA ZFS iSCSI JBOD solutions between sites without a high-bandwidth/low-latency interconnect to provide a multi-site multi-homed storage solution. With reference to this project please refer to:
 
-       https://github.com/stacepellegrino/illumos/hastctl
-       https://github.com/stacepellegrino/illumos/hastd
-
+- https://github.com/stacepellegrino/illumos/tree/master/HAST/hastd
+- https://github.com/stacepellegrino/illumos/tree/master/HAST/hastctl
 
 From the illumos.org developer forum is the following:
 
@@ -99,8 +98,8 @@ Furthermore, as pointed out to me by a former Sun Microsystems engineer (Andrew 
 
 Here are some references to RDMA (for further reading in context with HAS-ME)...
 
-       https://en.wikipedia.org/wiki/Remote_direct_memory_access
-       https://en.wikipedia.org/wiki/RDMA_over_Converged_Ethernet
+- https://en.wikipedia.org/wiki/Remote_direct_memory_access
+- https://en.wikipedia.org/wiki/RDMA_over_Converged_Ethernet
 
 
 I would be interested to read anyone's thoughts/comments in relation to this!
@@ -470,5 +469,6 @@ Virtual memory data structures required for the platform's HAT (Hardware Address
 Memory access in the kernel acquires a section of the virtual address space of the kernel, then mapping physical pages to that address. By calling from the page allocator page_create_va() the physical pages are acquired one at a time, whereby there is a need to map them into the address space in order to use the pages of concern. For general-purpose mappings, a section of the address space for the kernel, known as the kernel heap, is set aside. The kernel heap is a separate kernel memory segment containing a large area of virtual address space that is available to consumers of the kernel that require virtual address space for their mappings.
 
 A record of information is kept about which parts of the kernel map are free and which parts are allocated in order to satisfy new requests each time a consumer of the kernel uses a piece of the kernel heap. To record the information, a general-purpose allocator known as vmem is used to keep track of the start and length of the mappings that are allocated from the kernel map area. The allocator is used extensively for managing the kernel heap virtual address space, but since vmem is a universal resource allocator, it is further used for managing other resources such as task, resource, and zone IDs.
+
 
 -Stacey Pellegrino (stacey.pellegrino@gmail.com)
