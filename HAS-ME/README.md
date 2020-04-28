@@ -24,6 +24,8 @@ A FreeBSD HAST (High Available Storage) port to Illumos could do this, but it la
 - https://github.com/stacepellegrino/illumos/tree/master/HAST/hastd
 - https://github.com/stacepellegrino/illumos/tree/master/HAST/hastctl
 
+The respective HAST README is in the parent directory... https://github.com/stacepellegrino/illumos/tree/master/HAST
+
 From the illumos.org developer forum is the following:
 
 “If you have shared storage rebooting a VM was short enough to remove the need for this feature thus far … the cloud-native trend and load balancers have proven better solutions for all use cases I have come across.”
